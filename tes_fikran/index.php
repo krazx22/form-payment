@@ -13,30 +13,30 @@ $bulan = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', '
 </head>
 
 <body>
-    <div class="container-sm border px-5">
-        <br>
+    <div class="container-sm">
+        <div class="card px-5 bg-light bg-gradient" style="width: 46rem;">
+</br>
         <div class="text-center"><span class="border border-2 fs-3 fw-bold">Form Payment</span></div>
         <form action="index.php" method="post" id="formPayment">
-            <div class="px"></div>
             <div class="row row-cols-auto">
-                <div class="col">Account</div>
+                <div class="col-2">Account</div>
             </div>
             <div class="row row-cols-auto mb-3">
-                <div class="col"><label for="Fullname">Fullname</label></div>
-                <div class="col px-4"><input type="text" id="fn" name="fn" class="form-control"></div>
-                <div class="col"><label for="Nickname">Nickname</label></div>
-                <div class="col"><input type="text" id="nn" name="nn" class="form-control"></div>
+                <div class="col-2"><label for="Fullname">Fullname</label></div>
+                <div class="col-4 " ><input required type="text" id="fn" name="fn" class="form-control"></div>
+                <div class="col-2"><label for="Nickname">Nickname</label></div>
+                <div class="col-4"><input required type="text" id="nn" name="nn" class="form-control"></div>
             </div>
             <div class="row row-cols-auto mb-3">
-                <div class="col"><label for="Email">Email</label></div>
-                <div class="col px-5"><input type="text" id="email" name="email" class="form-control" size="66"></div>
+                <div class="col-2"><label for="Email">Email</label></div>
+                <div class="col-10"><input required type="email" id="email" name="email" class="form-control" size="66"></div>
             </div>
             <div class="row row-cols-auto mb-1">
                 <div class="col"><label for="DateOfBirth">Date of Birth</label></div>
             </div>
             <div class="row row-cols-auto">
                 <div class="col">
-                    <select class="form-select" id="tgl" name="tgl">
+                    <select required class="form-select" id="tgl" name="tgl">
                         <option value="">Tanggal</option>
                         <?php
                         for ($i = 1; $i <= 31; $i++) {
@@ -46,7 +46,7 @@ $bulan = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', '
                     </select>
                 </div>
                 <div class="col">
-                    <select class="form-select" id="bln" name="bln">
+                    <select required class="form-select" id="bln" name="bln">
                         <option value="">Bulan</option>
                         <?php
                         foreach ($bulan as $item) {
@@ -56,7 +56,7 @@ $bulan = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', '
                     </select>
                 </div>
                 <div class="col">
-                    <select class="form-select" id="thn" name="thn">
+                    <select required class="form-select" id="thn" name="thn">
                         <option value="">Tahun</option>
                         <?php
                         $tahunSaatIni = date("Y");
@@ -68,12 +68,12 @@ $bulan = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', '
                 </div>
                 <div class="col">Gender</div>
                 <div class="col">
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
+                    <input class="btn-check" type="radio" id="male" name="gender" value="male" checked>
+                    <label class="btn btn-outline-primary" for="male">Male</label>
                 </div>
                 <div class="col mb-4">
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
+                    <input class="btn-check" type="radio" id="female" name="gender" value="female">
+                    <label class="btn btn-outline-primary" for="female">Female</label>
                 </div>
             </div>
             <div class="d-grid gap-2">
@@ -137,6 +137,7 @@ $bulan = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', '
 
             ?>
         </form>
+        </div>
     </div>
 
 </body>
